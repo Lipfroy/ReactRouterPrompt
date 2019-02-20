@@ -21,6 +21,9 @@ class Header extends Component {
         <NavLink to="/posts" activeStyle={this.active}>
           Posts
         </NavLink>
+        <NavLink to="/newposts" activeStyle={this.active}>
+          NewPost
+        </NavLink>
       </div>
     );
   }
