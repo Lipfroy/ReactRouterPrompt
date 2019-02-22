@@ -1,17 +1,7 @@
 import React, { Component } from "react";
 import NavigationPrompt from "react-router-navigation-prompt";
-import Modal from 'react-modal';
+import CustomModal from "./CustomModal";
 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
 
 class Posts extends Component {
   constructor(props) {
@@ -19,23 +9,6 @@ class Posts extends Component {
     this.state = {
       shouldConfirmNavigation: false
     }
-  }
-  getModal = (onConfirm, onCancel) =>{
-    return (<Modal
-      isOpen={true}
-      style={customStyles}
-      contentLabel="Example Modal"
-    >
-      <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-      <button onClick={this.closeModal}>close</button>
-      <div>I am a modal</div>
-      
-        <button onClick={()=> {onConfirm();}}>fthghg </button>
-        <button onClick={()=> {onCancel();}} >stays</button>
-        <button>inside</button>
-        <button>the modal</button>
-    </Modal>);
-
   }
 
   render() {
@@ -46,7 +19,10 @@ class Posts extends Component {
           <button onClick={() => { this.setState({shouldConfirmNavigation: true})}}>Click to block Navigation</button>
         </div>
         <NavigationPrompt when={this.state.shouldConfirmNavigation}>
-          {({ onConfirm, onCancel }) => this.getModal(onConfirm, onCancel)}
+          {({ onConfirm, onCancel }) => (
+              <CustomModal onConfirm={onConfirm}
+               onCancel={onCancel}
+               isOpen={this.state.shouldConfirmNavigation} />)}
         </NavigationPrompt>
       </React.Fragment>
     );
