@@ -24,6 +24,12 @@ class Header extends Component {
         <NavLink to="/newposts" activeStyle={this.active}>
           NewPost
         </NavLink>
+        <NavLink to="/quilldemo" activeStyle={this.active}>
+          Quill Demo
+        </NavLink>
+        <NavLink to="/draftdemo" activeStyle={this.active}>
+          Draft Demo
+        </NavLink>
       </div>
     );
   }

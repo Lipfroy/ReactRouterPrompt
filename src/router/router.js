@@ -4,7 +4,8 @@ import App from "../components/App";
 import Posts from "../components/Posts";
 import Header from "../header";
 import NewPosts from "../components/NewPost";
-
+import QuillDemo from "../components/QuillDemo";
+import DraftDemo from "../components/DraftDemo";
 
 class ReactRouter extends React.Component {
   render() {
@@ -14,6 +15,8 @@ class ReactRouter extends React.Component {
         <Route exact path="/" component={App} />
         <Route  path="/posts" component={Posts} />
         <Route  path="/newposts" component={NewPosts} />
+        <Route  path="/quilldemo" component={QuillDemo} />
+        <Route  path="/draftdemo" component={DraftDemo} />
       </React.Fragment>
     );
   }
