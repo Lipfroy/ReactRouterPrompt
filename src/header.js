@@ -30,6 +30,9 @@ class Header extends Component {
         <NavLink to="/draftdemo" activeStyle={this.active}>
           Draft Demo
         </NavLink>
+        <NavLink to="/treeboxDemo" activeStyle={this.active}>
+          Tree Example
+        </NavLink>
       </div>
     );
   }

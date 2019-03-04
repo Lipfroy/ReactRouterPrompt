@@ -67,3 +67,50 @@ body {
 .RichEditor-activeButton {
   color: #5890ff;
 }
+
+
+
+.contentPreview {
+  border: 1px solid;
+  width: 45%;
+  margin: 20px 40px;
+  min-height: 400px;
+}
+
+.contentPreview .title {
+  padding: 5px;
+  text-align: center;
+  font-size: 15px;
+  border-bottom: 1px solid;
+}
+
+.contentPreview .content-area {
+  padding: 10px 20px;
+}
+.contentPreview .content-area p {
+  white-space: pre-wrap;
+}
+
+.clickable {
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.badge-primary {
+  padding: 8px 12px;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  list-style-type: none;
+  border-left: 1px dashed;
+}
+
+ul > li:before {
+  content: "--------";
+  position: absolute;
+  margin-left: -40px;
+}

@@ -8,7 +8,11 @@
   },
   "dependencies": {
     "draft-js": "^0.10.5",
+    "lodash": "^4.17.11",
+    "quill-image-resize": "^3.0.9",
+    "quill-image-resize-module": "^3.0.0",
     "react": "^16.8.3",
+    "react-checkbox-tree": "^1.5.1",
     "react-dom": "^16.8.3",
     "react-modal": "^3.8.1",
     "react-overlays": "^1.1.2",

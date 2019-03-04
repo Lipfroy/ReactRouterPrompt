@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import ReactQuill,  { Quill, Mixin, Toolbar }   from 'react-quill';
+// import { ImageResize } from 'quill-image-resize-module';
+
+// Quill.register('modules/imageResize', ImageResize);
 
 class QuillEditor extends Component {
   constructor(props) {
@@ -66,11 +69,13 @@ class QuillEditor extends Component {
   modules = {
     toolbar: {
       container: [
-        { 'header': [1, 2, false] },
-        'bold', 'italic', 'underline','strike', 'blockquote',
-        {'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'},
-        'link', 'image',
-        'clean'
+        [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
+        [{size: []}],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{'list': 'ordered'}, {'list': 'bullet'}, 
+         {'indent': '-1'}, {'indent': '+1'}],
+        ['link', 'image', 'video'],
+        ['clean']
       ],
       handlers: {
         image: this.imageHandler
@@ -94,6 +99,7 @@ class QuillEditor extends Component {
           onChange={this.handleChange}
           formats={this.formats} 
           theme="snow"
+          preserveWhitespace={true}
           ref={(el) => this.quillRef = el}/>
       </div>
     );

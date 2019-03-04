@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import QuillEditor from "./common/QuillEditor";
+import ContentPreview from "./common/ContentPreview";
 let data = '';
 
 class QuillDemo extends Component {
@@ -26,6 +27,7 @@ class QuillDemo extends Component {
         <button onClick={this.saveText}> Save </button>
         <button onClick={this.loadText}> Load Saved Data </button>
         <QuillEditor data={this.state.editorData} onChange={(data) => {this.setState({editorData: data})}}/>
+        <ContentPreview content={this.state.editorData} title={"Live Preview"}/>
       </React.Fragment>
     );
   }
